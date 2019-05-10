@@ -19,9 +19,7 @@ int main (){
 	int protection = PROT_READ | PROT_WRITE;
   	int visibility = MAP_SHARED | MAP_ANON;
 	int soma=0;
-	//soma= (int*) mmap(NULL, sizeof(int)*1, protection, visibility, 0, 0);
-	//*soma=0;
-	//char st[80];
+	
 
 	 unsigned int n[80],a,b;
 	pid_t pid[2];
@@ -35,26 +33,16 @@ int main (){
 	}while(k!=EOF);
 
 
-	/*while(st[i]!='\0'){
-		a=atoi(st[i]);
-		n[j]=a;
-		j++;
-		i++;
-		while(st[i]=' ' )
-			i++;
-	}*/
+	
 	j=j-1;
 	i=0;
-/*for(k=0;k<=j;k++){
-	printf("%d\n",n[k]);
 
-}*/
 vetor=(int*)mmap(NULL,j,protection,visibility,NULL,0);
 
 while(i<=j){
-	//printf("%d\n",i);
+	
 	if((j-i)>=3){
-			//printf("entrada1\n");
+			
 		for(e=0;e<3;e++){
 			a=n[i];
 			i++;
@@ -79,7 +67,7 @@ while(i<=j){
 				
 	}
 	else if((j-i)==2){
-		//printf("entrada2\n");		
+			
 		for(e=0;e<2;e++){
 			a=n[i];
 			i++;
@@ -102,7 +90,7 @@ while(i<=j){
 			waitpid(pid[e], NULL, 0);
 	}
 	else if((j-i)==1){
-			//printf("entrada3\n");
+			
 		for(e=0;e<1;e++){
 			a=n[i];
 			i++;
