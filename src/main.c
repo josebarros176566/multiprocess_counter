@@ -43,13 +43,13 @@ int main (){
 		while(st[i]=' ' )
 			i++;
 	}*/
-	j=j-2;
+	j=j-1;
 	i=0;
 /*for(k=0;k<=j;k++){
 	printf("%d\n",n[k]);
 
 }*/
-vetor=(int*)mmap(NULL,j,protection,visibility,-1,0);
+vetor=(int*)mmap(NULL,j,protection,visibility,NULL,0);
 
 while(i<=j){
 	//printf("%d\n",i);
@@ -69,7 +69,8 @@ while(i<=j){
 					vetor[i-1]=1;
 				else vetor[i-1]=0;
 				if(a==0||a==1)			
-					vetor[i-1]=0;				
+					vetor[i-1]=0;
+								
 				exit(0);
 			}	
 		}
